@@ -853,11 +853,6 @@ static inline bool audio_is_valid_format(audio_format_t format)
     case AUDIO_FORMAT_AC4:
     case AUDIO_FORMAT_LDAC:
         return true;
-    case AUDIO_FORMAT_PCM_OFFLOAD:
-        if (format != AUDIO_FORMAT_PCM_16_BIT_OFFLOAD &&
-                format != AUDIO_FORMAT_PCM_24_BIT_OFFLOAD)
-            return false;
-        return true;
     default:
         return false;
     }
@@ -912,7 +907,6 @@ static inline size_t audio_bytes_per_sample(audio_format_t format)
     switch (format) {
     case AUDIO_FORMAT_PCM_32_BIT:
     case AUDIO_FORMAT_PCM_8_24_BIT:
-    case AUDIO_FORMAT_PCM_24_BIT_OFFLOAD:
         size = sizeof(int32_t);
         break;
     case AUDIO_FORMAT_PCM_24_BIT_PACKED:
@@ -920,7 +914,6 @@ static inline size_t audio_bytes_per_sample(audio_format_t format)
         break;
     case AUDIO_FORMAT_PCM_16_BIT:
     case AUDIO_FORMAT_IEC61937:
-    case AUDIO_FORMAT_PCM_16_BIT_OFFLOAD:
         size = sizeof(int16_t);
         break;
     case AUDIO_FORMAT_PCM_8_BIT:
