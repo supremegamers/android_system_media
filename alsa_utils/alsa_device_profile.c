@@ -32,7 +32,7 @@
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 
-#define PERIOD_DURATION_US (5 * 1000)
+#define PERIOD_DURATION_US (25 * 1000)
 
 #define DEFAULT_PERIOD_SIZE 1024
 
